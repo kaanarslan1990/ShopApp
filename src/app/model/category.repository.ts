@@ -7,15 +7,21 @@ import { RestService } from './rest.service';
 export class CategoryRepository implements OnInit {
   private categories: Category[] = [];
 
-  constructor(private restService: RestService) {}
-
-  ngOnInit() {
+  constructor(private restService: RestService) {
     this.restService
       .getCategories()
       .subscribe((categories) => (this.categories = categories));
   }
 
-  getCategory(id: number): Category {
+  ngOnInit() {
+    
+  }
+
+  getCategory(id: number): Category | undefined {
     return this.categories.find(i =>i.id === id);
+  }
+
+  getCategories(): Category[] {
+    return this.categories;
   }
 }
