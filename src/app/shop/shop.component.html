@@ -1,8 +1,44 @@
-<p>
-
-    {{products.length}}
-</p>
-
-<p>
-    {{categories.length}}
-</p>
+<navbar></navbar>
+<div class="container-fluid pt-100">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-goup">
+        <a href="#" class="list-group-item list-group-item-action">Category-1</a
+        ><a href="#" class="list-group-item list-group-item-action"
+          >Category-2</a
+        ><a href="#" class="list-group-item list-group-item-action"
+          >Category-3</a
+        ><a href="#" class="list-group-item list-group-item-action"
+          >Category-4</a
+        ><a href="#" class="list-group-item list-group-item-action"
+          >Category-5</a
+        >
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <ng-container *ngFor="let p of products">
+          <div class="col-md-4">
+            <div class="card mb-3 align-items-center">
+              <img src="/assets/img/{{ p.imageUrl}}" class="img-fluid" alt="" width="307" height="240" />
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="">
+                    {{ p.name }}
+                  </a>
+                </h4>
+                <small class="text-muted">
+                    <i class="fas fa-lira-sign"></i> {{ p.price}}
+                </small>
+              </div>
+              <div class="card-footer text-center">
+                <button class="btn-outline-primary btn-sm rounded me-1">Details</button>
+                <button class="btn-outline-primary btn-sm rounded">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
