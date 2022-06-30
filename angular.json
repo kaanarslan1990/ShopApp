@@ -1,18 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ShopApp": {
+    "shop-App": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -20,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ShopApp",
+            "outputPath": "dist/shop-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -32,10 +25,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-              
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -74,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ShopApp:build:production"
+              "browserTarget": "shop-App:build:production"
             },
             "development": {
-              "browserTarget": "ShopApp:build:development"
+              "browserTarget": "shop-App:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ShopApp:build"
+            "browserTarget": "shop-App:build"
           }
         },
         "test": {
@@ -107,6 +97,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ShopApp"
+  }
 }
