@@ -28,10 +28,11 @@
     </div>
     <div class="col-md-9">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mb-3">
           <div class="alert alert-warning">
-            {{ products.length }} of products has been
+            {{ products.length }} of products has been listed.
         </div>
+      </div>
         <ng-container *ngFor="let p of products">
           <div class="col-md-4">
             <div class="card mb-3 align-items-center">
@@ -52,7 +53,7 @@
                   <i class="fa-solid fa-turkish-lira-sign"></i> {{ p.price }}
                 </small>
               </div>
-              <div class="card-md-footer text-center w-100">
+              <div class="card-md-footer p-2 bg-secondary bg-opacity-25 text-center w-100">
                 <button class="btn-warning btn-sm rounded-2 me-1">
                   Details
                 </button>
@@ -63,7 +64,8 @@
             </div>
           </div>
         </ng-container>
-      </div>
+      
     </div>
   </div>
+</div>
 </div>
