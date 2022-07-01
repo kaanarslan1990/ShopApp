@@ -13,7 +13,7 @@ import { ProductRepository } from "../model/product.repository";
 
 export class ShopComponent {
     public selectedCategory: Category = null!;
-    public productsPerPage = 2;
+    public productsPerPage = 3;
     public selectedPage = 1;
     
     
