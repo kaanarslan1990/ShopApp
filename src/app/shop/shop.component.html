@@ -4,6 +4,7 @@
 <div class="container-fluid pt-100">
   <div class="row">
     <div class="col-md-3">
+      <cart-summary></cart-summary>
       <p class="d-grid">
         <button
           class="btn btn-primary"
@@ -61,7 +62,7 @@
                 <button class="btn-warning btn-sm rounded-2 me-1">
                   Details
                 </button>
-                <button class="btn-primary btn-sm rounded-2">
+                <button (click)="addProductToCart(p)" class="btn-primary btn-sm rounded-2">
                   Add to Cart
                 </button>
               </div>

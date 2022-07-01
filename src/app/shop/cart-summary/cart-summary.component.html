@@ -1,0 +1,11 @@
+<div class="alert alert-success">
+    <span *ngIf="cart.itemCount>0">
+    Cart include {{cart.itemCount}} products. <br>
+    Total {{cart.total}} <small><i class="fa-solid fa-turkish-lira-sign"></i></small>
+</span>
+<span *ngIf="cart.itemCount==0">
+    No product on Cart
+</span>
+</div>
+
+

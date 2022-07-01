@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Cart } from "../model/cart.model";
 import { Category } from "../model/category.model";
 import { CategoryRepository } from "../model/category.repository";
 import { Product } from "../model/product.model";
@@ -20,7 +21,8 @@ export class ShopComponent {
 
     constructor(
         private productRepository: ProductRepository,
-        private categoryRepository: CategoryRepository) {}
+        private categoryRepository: CategoryRepository,
+        private cart: Cart) {}
 
         get products(): Product[] {
             let index = (this.selectedPage-1) * this.productsPerPage;
@@ -48,6 +50,11 @@ export class ShopComponent {
 
         changeCategory(newCategory?: Category ) {
             this.selectedCategory = newCategory!;
+        }
+
+        addProductToCart(product: Product) {
+            this.cart.addItem(product);
+
         }
     
 }
