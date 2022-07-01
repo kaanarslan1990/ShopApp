@@ -2,7 +2,12 @@
 <div class="container-fluid pt-100">
   <div class="row">
     <div class="col-md-3">
-      <div class="list-goup">
+      <p class="d-grid">        
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Categories
+        </button>
+      </p>
+      <div class="list-group collapse d-md-block" id="collapseExample">
         <a href="#" class="list-group-item list-group-item-action">Category-1</a
         ><a href="#" class="list-group-item list-group-item-action"
           >Category-2</a
@@ -28,12 +33,12 @@
                   </a>
                 </h4>
                 <small class="text-muted">
-                    <i class="fas fa-lira-sign"></i> {{ p.price}}
+                  <i class="fa-solid fa-turkish-lira-sign"></i> {{ p.price}}
                 </small>
               </div>
-              <div class="card-footer text-center">
-                <button class="btn-outline-primary btn-sm rounded me-1">Details</button>
-                <button class="btn-outline-primary btn-sm rounded">Add to Cart</button>
+              <div class="card-footer text-center w-100">
+                <button class="btn-warning btn-sm rounded-2 me-1 ">Details</button>
+                <button class="btn-primary btn-sm rounded-2">Add to Cart</button>
               </div>
             </div>
           </div>
