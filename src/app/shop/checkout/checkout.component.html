@@ -1,3 +1,47 @@
-<div class="alert alert-success">
-    Checkout component
+<navbar></navbar>
+
+<div class="container-fluid pt-100 mb-5">
+  <div *ngIf="orderSent" class="m-2 text-center">
+    <h2>Thanks!</h2>
+    <p>Your order saved.</p>
+    <button class="btn btn-primary" routerLink="/shop">
+        Continue Shopping
+    </button>
+  </div>
+
+  <form *ngIf="!orderSent" #form="ngForm" (ngSubmit)="submitOrder(form)" class="m-4">
+    <div class="form-group">
+        <label for="">Name</label>
+        <input class="form-control" #name="ngModel" [(ngModel)]="order.name" name="name" required>
+        <span *ngIf="submitted && name.invalid" class="text-danger">Please enter your name! </span>
+    </div>
+
+    <div class="form-group">
+        <label for="">Address</label>
+        <input class="form-control" #address="ngModel" [(ngModel)]="order.address" name="address" required>
+        <span *ngIf="submitted && email.invalid" class="text-danger">Please enter your email! </span>
+    </div>
+
+    <div class="form-group">
+        <label for="">City</label>
+        <input class="form-control" #city="ngModel" [(ngModel)]="order.city" name="city" required>
+        <span *ngIf="submitted && city.invalid" class="text-danger">Please enter your city! </span>
+    </div>
+    <div class="form-group">
+        <label for="">Phone</label>
+        <input class="form-control" #phone="ngModel" [(ngModel)]="order.phone" name="phone" required>
+        <span *ngIf="submitted && phone.invalid" class="text-danger">Please enter your phone! </span>
+    </div>
+    <div class="form-group">
+        <label for="">Email</label>
+        <input class="form-control" #email="ngModel" [(ngModel)]="order.email" name="email" required>
+        <span *ngIf="submitted && email.invalid" class="text-danger">Please enter your email! </span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Complete Order</button>
+    <button type="submit" routerLink="/shop" class="btn btn-primary mt-3 ms-2">Continue Shopping</button>
+    
+
+
+  </form>
 </div>
