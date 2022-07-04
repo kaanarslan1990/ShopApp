@@ -19,13 +19,13 @@
         </button>
       </p>
       <div class="list-group collapse d-md-block" id="collapseExample">
-        <a
+        <button
           *ngFor="let c of categories"
           (click)="changeCategory(c)"
           href="#"
           class="list-group-item list-group-item-action"
           [class.active]="c == selectedCategory"
-          >{{ c.name | titlecase }}</a
+          >{{ c.name | titlecase }}</button
         >
       </div>
     </div>
