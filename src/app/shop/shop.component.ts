@@ -11,16 +11,16 @@ import { ProductRepository } from '../model/product.repository';
   templateUrl: 'shop.component.html',
 })
 export class ShopComponent {
-  public selectedCategory: Category = null!;
+  
   public productsPerPage = 3;
   public selectedPage = 1;
   public selectedProducts: Product[] = [];
+  public selectedCategory: Category = null!;
 
   constructor(
     private productRepository: ProductRepository,
-    private categoryRepository: CategoryRepository,
-    private cart: Cart,
-    private router: Router
+    
+    
   ) {}
 
   get products(): Product[] {
@@ -52,16 +52,12 @@ export class ShopComponent {
     this.changePage(1);
   }
 
-  get categories(): Category[] {
-    return this.categoryRepository.getCategories();
+  getCategory(category: Category ) {
+    this.selectedCategory = category;
   }
 
-  changeCategory(newCategory?: Category) {
-    this.selectedCategory = newCategory!;
-  }
+ 
 
-  addProductToCart(product: Product) {
-    this.cart.addItem(product);
-    this.router.navigateByUrl('/cart');
-  }
+  
+  
 }

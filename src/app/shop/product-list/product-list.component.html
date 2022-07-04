@@ -1,0 +1,38 @@
+
+
+<div class="row">
+    <div class="col-md-4" *ngFor="let p of products">
+      <div class="card mb-3 align-items-center">
+        <img
+          src="/assets/img/{{ p.imageUrl }}"
+          class="img-fluid"
+          alt=""
+          width="307"
+          height="240"
+        />
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="">
+              {{ p.name }}
+            </a>
+          </h4>
+          <small class="text-muted">
+            <i class="fa-solid fa-turkish-lira-sign"></i> {{ p.price }}
+          </small>
+        </div>
+        <div
+          class="card-footer p-2 bg-secondary bg-opacity-25 text-center w-100"
+        >
+          <button class="btn-warning btn-sm rounded-2 me-1">
+            Details
+          </button>
+          <button
+            (click)="addProductToCart(p)"
+            class="btn-primary btn-sm rounded-2"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
