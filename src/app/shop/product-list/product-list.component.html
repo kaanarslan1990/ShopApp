@@ -1,4 +1,26 @@
+<div class="row border m-0 p-3 mb-4 text-center" *ngIf="selectedProduct">
+  <div class="col-md-2">
+    <img src="assets/img/{{selectedProduct.imageUrl}}" class="img-responsive" class="img-fluid">
+  </div>
+  <div class="col-md-10">
+    <h5 class="card-title">
+      {{ selectedProduct.name}}
+    </h5>
+    <p class="cad-text">
+      {{ selectedProduct.description}}
+    </p>
+    <button type="button" (click)="hideDetails()" class="btn btn-danger btn-sm me-2">Cancel Select</button>
+    <button
+            (click)="addProductToCart(selectedProduct)"
+            type="button"
+            class="btn btn-primary btn-sm rounded-2"
+          >
+            Add to Cart
+          </button>
+  </div>
 
+  
+</div>
 
 <div class="row">
     <div class="col-md-4" *ngFor="let p of products">
@@ -23,7 +45,7 @@
         <div
           class="card-footer p-2 bg-secondary bg-opacity-25 text-center w-100"
         >
-          <button class="btn-warning btn-sm rounded-2 me-1">
+          <button (click)="displayDetails(p)" class="btn btn-warning btn-sm rounded-2 me-1">
             Details
           </button>
           <button
