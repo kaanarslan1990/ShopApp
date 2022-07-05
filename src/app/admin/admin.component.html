@@ -1,3 +1,16 @@
-<div class="bg-primary p-2 text-white">
-    Admin Placeholder
+<div class="container-fluid">
+  <div class="row mb-4">
+    <div class="col bg-primary p-2 text-white">Admin Panel</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 d-grid gap-2 col-6 mx-auto">
+        <button routerLink="/shop" class="btn btn-outline-info btn-block">Shop</button>
+        <button (click)="logout()" class="btn btn-outline-danger btn-block">
+            Logout
+        </button>
+    </div>
+    <div class="col-md-9">
+
+    </div>
+  </div>
 </div>
