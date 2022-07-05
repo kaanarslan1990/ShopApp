@@ -1,35 +1,35 @@
 <div class="container-fluid">
-  <div class="row mb-4">
+  <div class="row">
     <div class="col bg-primary p-2 text-white">Admin Panel</div>
   </div>
-  <div class="row">
-    <div class="col-md-3 d-grid gap-2 col-6 mx-auto">
-      <button routerLink="/shop" class="btn btn-outline-info btn-block">
+  <div class="row mt-2">
+    <div class="col-md-3 d-grid">
+      <button routerLink="/shop" class="btn btn-outline-info">
         Shop
       </button>
       <button
         routerLinkActive="active"
         routerLink="/admin/main/products"
-        class="btn btn-outline-info btn-block"
+        class="btn btn-outline-info"
       >
         Products
       </button>
       <button
         routerLinkActive="active"
         routerLink="/admin/main/categories"
-        class="btn btn-outline-info btn-block"
+        class="btn btn-outline-info"
       >
         Categories
       </button>
       <button
         routerLinkActive="active"
         routerLink="/admin/main/orders"
-        class="btn btn-outline-info btn-block"
+        class="btn btn-outline-info"
       >
         Orders
       </button>
 
-      <button (click)="logout()" class="btn btn-outline-danger btn-block">
+      <button (click)="logout()" class="btn btn-outline-danger">
         Logout
       </button>
     </div>
