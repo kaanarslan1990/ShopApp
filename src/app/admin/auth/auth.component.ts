@@ -15,18 +15,20 @@ export class AuthComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   login(form: NgForm) {
     if (form.valid) {
-      this.authService.authenticate(this.username, this.password).subscribe(response => {
-        if(response) {
-          this.router.navigateByUrl('/admin/main');
-        }
-        this.errorMessage='Wrong username or password';
-      });
+      this.authService.authenticate(this.username, this.password)
+        .subscribe(response=> {
+          if(response) {
+            this.router.navigateByUrl('/admin/main');
+          }
+          this.errorMessage = 'Hatalı username ya da parola';
+        })
     } else {
-      this.errorMessage = 'Enter a valid username and correct password!';
+      this.errorMessage = 'Bilgileri eksiksiz girin';
     }
   }
+
 }

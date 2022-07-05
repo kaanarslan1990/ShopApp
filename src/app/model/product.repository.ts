@@ -17,16 +17,20 @@ export class ProductRepository implements OnInit {
 
   ngOnInit() {}
 
-  getProduct(id: number): Product | undefined {
-    return this.products.find((i) => i.id === id);
+  getProduct(id: number): Product {
+    return this.products.find((i) => i.id == id);
   }
 
-  getProducts(category: Category = null!): Product[] {
+  getProducts(category: Category = null): Product[] {
     if (category)
       return this.products.filter((p) => p.category == category.name);     
     else 
       return this.products;
   }
+//   deleteProduct(product: Product) {
+//     this.restService.deleteProduct(product)
+//         .subscribe(p => this.products.splice(this.products.findIndex(p => p.id == product.id), 1));
+// }
 
   
   

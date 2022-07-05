@@ -27,7 +27,7 @@ import { OrderListComponent } from './orders/order-list/order-list.component';
   imports: [
     CommonModule,
     FormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
 
   ],
   providers: [AuthGuard]
