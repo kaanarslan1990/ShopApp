@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Category } from './category.model';
@@ -24,13 +24,30 @@ export class RestService {
     return this.http.post<Order>(this.baseUrl + 'orders', order);
   }
 
+
+  
+  addProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl + 'products', product, {
+      headers: new HttpHeaders({
+        "authorization": `Bearer<${this.token}>`
+      })
+    })
+  }
+
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(this.baseUrl + 'products/' + product.id, product, {
+      headers: new HttpHeaders({
+        "authorization": `Bearer<${this.token}>`
+      })
+    })
+  }
+
   authentication(username: string, password: string): Observable<boolean> {
     return this.http.post<any>(this.baseUrl + 'login', {
       username: username,
-      password: password,
+      password: password
     }).pipe(map(response => {
-      this.token = response.success ? response.token :  null;
-      console.log(this.token);
+      this.token = response.success ? response.token : null;
       return response.success;
     }));
   }
