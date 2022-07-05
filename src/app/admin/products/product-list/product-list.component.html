@@ -16,7 +16,7 @@
         <td>{{p.price}} TL</td>
         <td>
           <button class="btn btn-warning btn-sm" [routerLink]="['/admin/main/products/edit', p.id]">Edit</button>
-          <button class="btn btn-danger btn-sm ms-2">Delete</button>
+          <button class="btn btn-danger btn-sm ms-2" (click)="deleteProduct(p)">Delete</button>
         </td>
       </tr>
     </tbody>
